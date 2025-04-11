@@ -1,0 +1,160 @@
+.favourite {
+    padding: 20px 20px 40px 20px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    border-radius: 5px;
+}
+.favourite-border {
+    width: 100%;
+    height: auto;
+    max-height: 530px;
+    overflow: auto;
+    border-radius: 5px;
+    border: 1px solid rgb(248, 248, 248);
+}
+.favourite-heading {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(158, 158, 158);
+    margin-bottom: 15px;
+}
+.favourite-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+.favourite-body {
+    padding: 15px 40px;
+    border-radius: 3px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    display: flex;
+    align-items: start;
+    flex-direction: row;
+}
+.favourite-body-img {
+    width: 120px;
+    height: 120px;
+}
+.favourite-body-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.favourite-body-content {
+    border-left: 1px solid rgb(205, 205, 205);
+    margin-left: 30px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.favourite-body-contentProductName {
+    line-height: 1.2;
+    width: 500px;
+    height: 38px;
+    letter-spacing: 0.1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-weight: 500 !important;
+    color: rgb(158, 158, 158);
+    margin-bottom: 8px;
+}
+.favourite-body-contentInfo {
+    line-height: 1.2;
+    width: 480px;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    display: flex;
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: rgb(141, 141, 141);
+}
+.favourite-body-contentInfo span {
+    width: 80px;
+}
+.favourite-body-contentInfo p {
+    font-size: 16px;
+    font-weight: 500;
+}
+.favourite-body-contentDate {
+    line-height: 1.2;
+    width: 320px;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    display: flex;
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: 400;
+    color: rgb(141, 141, 141);
+}
+.favourite-body-contentDate span {
+    width: 80px;
+}
+.favourite-body-contentDate p {
+    font-size: 16px;
+    font-weight: 500;
+}
+.favourite-body-contentDatep {
+    font-size: 16px;
+    font-weight: 500;
+}
+.favourite-body-contentNumberStar {
+    display: flex;
+    align-items: center;
+}
+.favourite-body-contentNumberStar span {
+    font-size: 15px;
+    width: 80px;
+    font-weight: 400;
+    color: rgb(141, 141, 141);
+}
+.favourite-body-contentButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.favourite-body-contentButton .btn-favourite {
+    position: relative;
+    /* margin-right: 30px; */
+    color: rgb(228, 59, 59);
+    font-size: 25px;
+    transition: all 0.2s ease;
+}
+.favourite-body-contentButton .btn-favourite::after {
+    pointer-events: none;
+    position: absolute;
+    content: "(Nhấn vào icon để xoá sản phẩm khỏi yêu thích)";
+    color: rgb(84, 84, 84);
+    white-space: nowrap;
+    line-height: 100%;
+    font-size: 10px;
+    bottom: 0;
+}
+.favourite-body-contentButton .btn-favourite:hover {
+    transition: all 0.2s ease;
+    color: rgb(212, 39, 39);
+}
+.favourite-body-contentButton .btn {
+    padding: 10px 20px !important;
+}
+.favourite-body-contentButton .btn-buyNow {
+    background: transparent !important;
+    transition: all 0.2s linear;
+    border: 1px solid grey;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.favourite-body-contentButton .btn-buyNow:hover {
+    background: rgb(228, 59, 59) !important;
+    transition: all 0.2s linear;
+    color: #fff;
+}

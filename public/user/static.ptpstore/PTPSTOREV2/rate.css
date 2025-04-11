@@ -1,0 +1,98 @@
+.rate {
+    padding: 20px 20px 40px 20px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    border-radius: 5px;
+}
+.rate-border {
+    width: 100%;
+    height: auto;
+    max-height: 530px;
+    overflow: auto;
+    border-radius: 5px;
+    border: 1px solid rgb(248, 248, 248);
+}
+.rate-heading {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(158, 158, 158);
+    margin-bottom: 15px;
+}
+.rate-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+.rate-body {
+    padding: 15px 40px;
+    border-radius: 3px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    align-items: start;
+    flex-direction: row;
+}
+.rate-body-img {
+    width: 120px;
+    height: 120px;
+}
+.rate-body-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.rate-body-content {
+    border-left: 1px solid rgb(205, 205, 205);
+    margin-left: 30px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.rate-body-contentProductName {
+    line-height: 1.2;
+    width: 500px;
+    height: 38px;
+    letter-spacing: 0.1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-weight: 500 !important;
+    color: rgb(158, 158, 158);
+    margin-bottom: 8px;
+}
+.rate-body-contentInfo {
+    line-height: 1.3;
+    width: 480px;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    display: flex;
+    margin-bottom: 5px;
+    font-weight: 400 !important;
+    color: rgb(158, 158, 158);
+}
+.rate-body-contentInfo span {
+    font-size: 16px;
+    white-space: nowrap;
+    width: 180px;
+    font-weight: 500;
+    color: #89817f;
+}
+.rate-body-contentInfo div {
+    width: 350px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.rate-body-contentNumberStar {
+    display: flex;
+    align-items: center;
+}
+.rate-body-contentNumberStar span {
+    font-size: 15px;
+    width: 120px;
+    font-weight: 400;
+    color: rgb(141, 141, 141);
+}

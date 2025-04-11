@@ -1,0 +1,29 @@
+.tradingGuide {
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    padding: 20px 10px;
+    border-radius: 5px;
+}
+.tradingGuide-title {
+    font-size: 28px;
+    color: rgb(94, 94, 94);
+    margin-bottom: 10px;
+}
+.tradingGuide-box {
+    margin-bottom: 20px;
+}
+.tradingGuide-boxDesc {
+    font-size: 18px;
+    line-height: 1.2;
+    color: rgb(94, 94, 94);
+    margin-bottom: 10px;
+}
+.tradingGuide-boxImage {
+    width: 100%;
+    height: 400px;
+}
+.tradingGuide-boxImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

@@ -1,0 +1,263 @@
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-input {
+    border: 1px solid #ddd;
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+}
+
+.number-input button {
+    outline: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input button:before,
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    content: "";
+    width: 0.8rem;
+    height: 1px;
+    background-color: rgb(134, 134, 134);
+    transform: translate(-50%, -50%);
+}
+
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type="number"] {
+    font-family: sans-serif;
+    max-width: 5rem;
+    padding: 0.5rem;
+    border: solid rgb(155, 155, 155);
+    border-width: 0 0.5px;
+    font-size: 1.2rem;
+    height: 2rem;
+    font-weight: 300;
+    color: rgb(82, 82, 82);
+    text-align: center;
+}
+.tbody-tr {
+    height: 120px;
+}
+.tbody-td {
+    padding-left: 15px !important;
+}
+.tbody-td a {
+    color: rgb(47, 47, 47);
+    font-size: 16px;
+}
+
+.cart-fixed {
+    padding: 20px 20px 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    bottom: 0;
+    max-width: 1170px;
+    margin: 0 auto;
+    z-index: 9;
+    padding-bottom: 20px;
+}
+.cart-fixed-top {
+    display: flex;
+    justify-content: flex-end;
+}
+.border-bottom {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+.pt-10 {
+    padding-top: 10px;
+}
+.cart-topVoucher {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart-topVoucher-text,
+.cart-topVoucher-number {
+    font-size: 15px;
+    color: rgb(87, 87, 87);
+}
+.cart-topVoucher button {
+    width: 225px !important;
+    overflow-x: hidden;
+    /* text-align: right; */
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+.cart-topVoucher-number {
+    color: rgb(120, 120, 120);
+}
+.cart-topVoucher-text i {
+    color: #ff3366;
+}
+.cart-fixed-bottom {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart-bottomElementCheck {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cart-block-info {
+    position: relative;
+    width: 100%;
+}
+.cart-check {
+    margin-right: 10px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+.cart-delete {
+    margin-right: 20px;
+}
+.cart-check input[type="checkbox"] {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.comeback {
+    margin-right: 10px !important;
+}
+.comeback,
+.button-default {
+    border-radius: 3px !important;
+}
+.btn {
+    padding: 10px 20px;
+}
+.btn-delete,
+.btn-favourite,
+.btn-chooseVoucher,
+.btn-chooseVoucherDetail {
+    outline: none !important;
+    border: none !important;
+    background: transparent;
+    transition: all 0.2s linear;
+    font-weight: 600 !important;
+}
+.btn-close,
+.btn-add-address {
+    outline: none !important;
+    border: 1px solid rgb(213, 213, 213) !important;
+    background: transparent;
+    transition: all 0.2s linear;
+    font-weight: 600 !important;
+}
+.btn-add-address:hover {
+    color: #fff !important;
+    background: rgb(26, 219, 219);
+    transition: all 0.2s linear;
+}
+.btn-delete:hover {
+    color: #fff !important;
+    background: rgb(255, 66, 66);
+    transition: all 0.2s linear;
+}
+.btn-favourite:hover {
+    color: #fff !important;
+    background: rgb(255, 161, 19);
+    transition: all 0.2s linear;
+}
+.btn-chooseVoucher:hover,
+.btn-chooseVoucherDetail:hover {
+    color: #fff !important;
+    background: rgb(6, 166, 134);
+    transition: all 0.2s linear;
+}
+.btn-close:hover {
+    color: #fff !important;
+    background: rgb(255, 161, 38);
+    transition: all 0.2s linear;
+}
+.modal-body-voucher {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    display: flex;
+    align-items: start;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.modal-body-voucher i {
+    font-size: 40px;
+    color: rgb(255, 123, 123);
+}
+.modal-body-voucherItem {
+    margin-left: 20px;
+    display: flex;
+    align-items: start;
+}
+.modal-body-voucherItemText {
+    display: flex;
+    flex-direction: column;
+}
+.modal-body-voucherItemTitle {
+    font-size: 20px;
+    color: grey;
+    padding-bottom: 10px;
+}
+.modal-body-voucherItemDesc {
+    font-size: 16px;
+    color: grey;
+    padding-bottom: 10px;
+}
+.modal-body-voucherItemButton {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.modal-body {
+    height: 500px !important;
+    overflow-y: scroll;
+}
+.cart-totalPrice {
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+.cart-totalPrice span {
+    font-size: 14px;
+}
+.cart-totalPrice p {
+    padding-left: 3px;
+    font-size: 22px;
+    color: rgb(234, 36, 36);
+    font-weight: bold;
+}

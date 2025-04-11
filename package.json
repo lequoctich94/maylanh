@@ -1,0 +1,25 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production",
+        "lint": "eslint . --ext js,jsx,ts,tsx,php --fix",
+        "eslint:watch": "chokidar 'resources/assets/admin/js/**/*.js' 'resources/assets/admin/js/**/*.vue' -c 'npm run eslint:fix'"
+    },
+    "devDependencies": {
+        "axios": "^0.21",
+        "eslint": "^8.15.0",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14"
+    },
+    "eslint:fix": "eslint 'resources/assets/admin/js/**/*.{js,vue}' --fix",
+    "dependencies": {
+        "chokidar-cli": "^3.0.0"
+    }
+}
