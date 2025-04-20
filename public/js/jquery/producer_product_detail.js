@@ -111,81 +111,6 @@ $(document).ready(function () {
         });
     });
 
-    //Thêm chi tiết size
-    $(".btn_more_size").on("click", function () {
-        $("#addSizeOfProducerProductDetail .error-product-detail").remove();
-        $product_detail_id = $(this).attr("product_detail_id");
-
-        $.ajax({
-            type: "GET",
-            url:
-                "/api/product-details/get-product-detail-by-id/" +
-                $product_detail_id +
-                "?token=" +
-                $('meta[name="jwt-token"]').attr("content"),
-            success: function (data) {
-                if (data.status == 401) {
-                    logout();
-                    return;
-                }
-                $product_detail = data.data;
-
-                $("#addSizeOfProducerProductDetail #inputColorName").val(
-                    $product_detail.color.color_name
-                );
-                $("#addSizeOfProducerProductDetail #inputColorId").val(
-                    $product_detail.color.color_id
-                );
-                $.ajax({
-                    type: "GET",
-                    url:
-                        "/api/images/get-all-image-by-id-product-and-id-color-and-status/" +
-                        $product_detail.product.product_id +
-                        "&" +
-                        $product_detail.color.color_id +
-                        "&1" +
-                        "?token=" +
-                        $('meta[name="jwt-token"]').attr("content"),
-                    success: function (data) {
-                        if (data.status == 401) {
-                            logout();
-                            return;
-                        }
-                        var $images = data.data;
-
-                        //IMAGE
-                        var opt_img = [];
-
-                        for (var $i = 0; $i < $images.length; $i++) {
-                            if ($i == 0) {
-                                opt_img += '<div class="carousel-item active">';
-                            } else {
-                                opt_img += '<div class="carousel-item">';
-                            }
-                            opt_img +=
-                                '<img class="card-img img-container"\
-                    style="background-posistion:cover; object-cover:cover;"\
-                    src="/upload/products/' +
-                                $images[$i].product.product_id +
-                                "/" +
-                                $images[$i].img_name +
-                                '"\
-                    alt="Second slide">\
-                    </div>';
-                        }
-                        $(
-                            "#addSizeOfProducerProductDetail #carousel-img"
-                        ).empty();
-                        $(
-                            "#addSizeOfProducerProductDetail #carousel-img"
-                        ).append(opt_img);
-                    },
-                });
-            },
-            error: function () {},
-        });
-    });
-
     //Cập nhật hình ảnh
     $(".btn_edit_image").on("click", function () {
         $("#editImageProducerProductDetail .error-product-detail").remove();
@@ -210,25 +135,28 @@ $(document).ready(function () {
                 }
                 $product_detail = data.data;
                 console.log($product_detail);
-                // $("#editImageProducerProductDetail #inputColorName").val(
-                //     $product_detail.color.color_name
-                // );
-                // $("#editImageProducerProductDetail #inputColorId").val(
-                //     $product_detail.color.color_id
-                // );
 
-                // $("input[name=product_detail_id]").val(
-                //     $product_detail.product_detail_id
-                // );
+                $("#editImageProducerProductDetail #color-selected").val(
+                    $product_detail.color.color_id
+                );
 
+                $("#editImageProducerProductDetail #power").val(
+                    $product_detail.power
+                );
+
+                $("#editImageProducerProductDetail #power_unit").val(
+                    $product_detail.power_unit
+                );
+
+                $("#editImageProducerProductDetail #inputProductPrice").val(
+                    $product_detail.price_produced
+                );
+                let url = getImageDetailProduct($product_detail.product.product_id, $product_detail);
                 $.ajax({
                     type: "GET",
                     url:
                         "/api/images/get-all-image-by-id-product-and-id-color-and-status/" +
-                        $product_detail.product.product_id +
-                        "&" +
-                        $product_detail.color.color_id +
-                        "&1" +
+                        url +
                         "?token=" +
                         $('meta[name="jwt-token"]').attr("content"),
                     success: function (data) {
@@ -386,82 +314,6 @@ $("select#select-size-id").on("change", function () {
             }
 
             row.find("td[name=status]").append(statusProductDetail);
-        },
-    });
-});
-//Cập nhật giá sản phẩm
-$(".btn_edit_price_produced").on("click", function () {
-    $product_detail_id = $(this).attr("product_detail_id");
-    $("form.update_price_produced input[name=product_detail_id").val(
-        $product_detail_id
-    );
-    $.ajax({
-        type: "GET",
-        url:
-            "/api/product-details/get-product-detail-by-id/" +
-            $product_detail_id +
-            "?token=" +
-            $('meta[name="jwt-token"]').attr("content"),
-        success: function (data) {
-            if (data.status == 401) {
-                logout();
-                return;
-            }
-            product_detail = data.data;
-
-            $("form.update_price_produced input[name=color_name]").val(
-                product_detail.color.color_name
-            );
-            $("form.update_price_produced input[name=size_name]").val(
-                product_detail.size.size_name
-            );
-
-            $("form.update_price_produced input[name=price_produced]").val(
-                product_detail.price_produced
-            );
-
-            $.ajax({
-                type: "GET",
-                url:
-                    "/api/images/get-all-image-by-id-product-and-id-color-and-status/" +
-                    product_detail.product.product_id +
-                    "&" +
-                    product_detail.color.color_id +
-                    "&1" +
-                    "?token=" +
-                    $('meta[name="jwt-token"]').attr("content"),
-                success: function (data) {
-                    if (data.status == 401) {
-                        logout();
-                        return;
-                    }
-                    var $images = data.data;
-
-                    //IMAGE
-                    var opt_img = [];
-
-                    for (var $i = 0; $i < $images.length; $i++) {
-                        if ($i == 0) {
-                            opt_img += '<div class="carousel-item active">';
-                        } else {
-                            opt_img += '<div class="carousel-item">';
-                        }
-                        opt_img +=
-                            '<img class="card-img img-container"\
-                                style="background-position:cover; object-cover:cover;"\
-                                src="/upload/products/' +
-                            $images[$i].product.product_id +
-                            "/" +
-                            $images[$i].img_name +
-                            '"\
-                                alt="Second slide">\
-                                </div>';
-                    }
-                    $("#editPriceProduced #carousel-img").empty();
-                    $("#editPriceProduced #carousel-img").append(opt_img);
-                },
-                error: function () {},
-            });
         },
     });
 });

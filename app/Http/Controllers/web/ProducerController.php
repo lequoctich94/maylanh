@@ -210,6 +210,12 @@ class ProducerController extends Controller
        if($req->price_produced){
             $data['price_produced'] = $req->price_produced;
        }
+       if($req->power){
+            $data['power'] = $req->power;
+       }
+       if($req->power_unit){
+            $data['power_unit'] = $req->power_unit;
+       }
        
        return $data;
     }

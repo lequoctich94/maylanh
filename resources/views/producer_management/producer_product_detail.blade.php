@@ -126,11 +126,6 @@
                                                         data-toggle="tooltip" data-original-title="Sửa"
                                                         class="btn_edit_image icon-pencil text-green"
                                                         product_detail_id="{{ $product_detail_distinct->product_detail_id }}"
-                                                        color_id="{{ $product_detail_distinct->color_id }}"
-                                                        power="{{ $product_detail_distinct->power }}"
-                                                        power_unit="{{ $product_detail_distinct->power_unit }}"
-                                                        size_id="{{ $product_detail_distinct->size_id }}"
-                                                        price_produced="{{ $product_detail_distinct->price_produced }}"
                                                         >
                                                     </i>
                                                 </a>
@@ -462,6 +457,7 @@
 <script src="{{ asset('vendors4/dropzone/dist/dropzone.js')}}"></script>
 <script src="{{ asset('dist/js/form-file-upload-data.js')}}"></script>
 <script src="{{ asset('dist/js/validation-form.js')}}"></script>
+<script src="{{ asset('js/jquery/common.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/jquery/producer_product_detail.js') }}"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />

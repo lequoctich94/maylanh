@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use App\Http\Resources\ProductDetailResource;
 use App\Http\Payload;
 use Exception;
+use App\Helper\ProductDetailHelper;
 
 class ProductDetailController extends Controller
 {
@@ -103,7 +104,7 @@ class ProductDetailController extends Controller
                     'power_unit' => $req->power_unit,
                 ]);
                 foreach ($req->size_id as $size_id) {
-                    $reqNew['product_detail_id'] = $reqNew->product_id . $size_id . $reqNew->color_id;
+                    $reqNew['product_detail_id'] = ProductDetailHelper::createProductDetailId($reqNew->product_id, $reqNew);
                     $reqNew['size_id'] = $size_id;
                     $product_detail = $this->buildProductDetail($reqNew);
                     $product_detail->save();
@@ -125,7 +126,7 @@ class ProductDetailController extends Controller
         $product_detail = new ProductDetail();
         $product_detail->fill(
             [
-                'product_detail_id' => $req->product_id . $req->size_id . $req->color_id,
+                'product_detail_id' => ProductDetailHelper::createProductDetailId($req->product_id, $req),
                 'product_id' => $req->product_id,
                 'size_id' => $req->size_id,
                 'status' => 1,

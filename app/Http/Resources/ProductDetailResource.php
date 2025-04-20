@@ -21,6 +21,9 @@ class ProductDetailResource extends JsonResource
             'color' => $this->color,
             'price_produced' => $this->price_produced,
             'status' => $this->status,
+            'power' => $this->power,
+            'power_unit' => $this->power_unit,
+            'price_produced_for_sale' => $this->price_produced_for_sale,
         ];
     }
 }

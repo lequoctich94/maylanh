@@ -108,12 +108,12 @@ $("#addProducer button.btn-add-producer").on("click", function() {
         return false;
     }
 
-    if (!validatePhone($phone)) {
-        $("#addProducer .phone").append(
-            '<p class="error-producer text-red">Số điện thoại không hợp lệ</p>'
-        );
-        return false;
-    }
+    // if (!validatePhone($phone)) {
+    //     $("#addProducer .phone").append(
+    //         '<p class="error-producer text-red">Số điện thoại không hợp lệ</p>'
+    //     );
+    //     return false;
+    // }
 
     // if (!validateName($producer_name)) {
     //     $("#addProducer .producer_name").append(
